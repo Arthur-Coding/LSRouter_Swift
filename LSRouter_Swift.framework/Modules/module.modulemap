@@ -1,4 +1,0 @@
-framework module LSRouter_Swift {
-    header "LSRouter_Swift-Swift.h"
-    requires objc
-}
