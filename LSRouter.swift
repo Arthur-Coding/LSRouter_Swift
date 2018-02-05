@@ -97,6 +97,7 @@ open class LSRouter : NSObject {
     ///
     /// - Parameter objectClass: 组件类名
     /// - Returns: YES or NO
+    @discardableResult
     public class func releaseModule(objectClass:String) -> Bool
     {
         if router.modules.keys.contains(objectClass) {
