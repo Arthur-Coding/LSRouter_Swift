@@ -17,7 +17,6 @@ public typealias LSInformationHandler = (Any)->Void
 ///   - url: 格式：scheme://[target]/[actionName]?[params]
 ///          例如：aaa://targetA/actionB?id=1234&key=4567
 ///   - completion: 完成回调
-@discardableResult
 @available(iOS 8.0, macOS 10.11, tvOS 9.0, *)
 public func performAction(url:URL, completion:LSRouterHandler?)
 {
@@ -31,7 +30,6 @@ public func performAction(url:URL, completion:LSRouterHandler?)
 ///   - actionName: 待执行方法名，组件的方法名前必须添加前缀@objc
 ///   - params: 待执行方法的参数
 ///   - perform: 找到组件后下一步调用处理，如push、present组件等
-@discardableResult
 @available(iOS 8.0, macOS 10.11, tvOS 9.0, *)
 public func openModule(objectClass:String, actionName:String?, params:Any?, perform:LSRouterHandler?)
 {
@@ -55,7 +53,6 @@ public func releaseModule(objectClass:String) -> Bool
 /// - Parameters:
 ///   - information: 通讯信息
 ///   - tagName: 通讯标记，用于接收方识别接收信息
-@discardableResult
 @available(iOS 8.0, macOS 10.11, tvOS 9.0, *)
 public func sendInformation(information:Any, tagName:String)
 {
@@ -68,7 +65,6 @@ public func sendInformation(information:Any, tagName:String)
 /// - Parameters:
 ///   - tagName: 通讯标记，用于接收方识别接收信息
 ///   - result: 接收到通讯信息回调，将返回通讯信息
-@discardableResult
 @available(iOS 8.0, macOS 10.11, tvOS 9.0, *)
 public func receiveInformation(tagName:String, result:@escaping LSInformationHandler)
 {

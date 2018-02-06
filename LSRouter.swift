@@ -16,7 +16,7 @@ open class LSRouter : NSObject {
 
     // 重新init，防止误调取init
     private override init(){
-        print("create 单例")
+        print("Create LSRouter successfully!")
     }
 
     private var modules:Dictionary<String, Any> = [:]
@@ -85,7 +85,10 @@ open class LSRouter : NSObject {
             let action = Selector(actionName!)
 
             if  object!.responds(to: action) {
-                object!.perform(action, with: params)
+                let result:Unmanaged<AnyObject>! = object!.perform(action, with: params)
+                if result != nil {
+                    print("Execute successfully!")
+                }
             }else {
                 LSRouter.showAlert(message: "Undiscovered action!")
                 LSRouter.releaseModule(objectClass: objectClass)
