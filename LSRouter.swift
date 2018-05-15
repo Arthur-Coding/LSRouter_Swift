@@ -22,6 +22,11 @@ open class LSRouter : NSObject {
     private var modules:Dictionary<String, Any> = [:]
     private var receiveBlks:Dictionary<String, Any> = [:]
 
+    public class func shared() -> LSRouter
+    {
+		return router
+    }
+
     /// 远程App调用入口
     ///
     /// - Parameters:

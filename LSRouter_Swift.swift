@@ -11,6 +11,12 @@ import Foundation
 public typealias LSRouterHandler = (AnyObject)->Void
 public typealias LSInformationHandler = (Any)->Void
 
+@available(iOS 8.0, macOS 10.11, tvOS 9.0, *)
+public func shared() -> LSRouter
+{
+    return LSRouter.shared()
+}
+
 /// 远程App调用入口
 ///
 /// - Parameters:
